@@ -1,0 +1,38 @@
+  <!DOCTYPE html>
+  <html lang="fr">
+  
+  <head>
+	<title> Grimpe un arbre - Les arbres grimpables </title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" href="./css/style1.css">
+    <?php session_start ();
+    if (isset($_SESSION['connecté']) && $_SESSION['connecté'] == false) {
+	 header (Location: connection.html);}
+	?>
+  </head>
+  
+  <body>
+  
+    <form name="ajouter_arbre" action="formulaire.php" method="post">
+    <p>
+	    <label for="image">Photo de votre arbre</label>
+	    <input type="file" name="image"/></br>
+	    <label for="espece">Espèce</label>
+	    <input type="text" name="espece"></br>
+	    <label for="coordonnées"> Coordonées</label>
+	    <input type="text" name="coordonnées"/></br>
+	    <label for="region">Région</label>
+	    <input type="text" name="region"/></br
+    	<label for="hauteur">Hauteur</label>
+    	<input type="text" name="Hauteur"></br>
+    	<label for="difficultee" Difficultée</label>
+    	<select name="difficultee">
+    	<option value="facile"Facile</option>
+    	<option value="intermediaire"Intermediaire</option>
+    	<option value="difficile"Difficile</option>
+    	</select></br>
+    	<input type="hiden" value=<?php echo= ($nombre+1) ?> name="nombre">
+    	<input type="submit" value="Envoyer"/>
+  	</p>
+    </form>
+</body>
